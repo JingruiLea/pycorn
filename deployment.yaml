@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pycron
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pycron
+  template:
+    metadata:
+      labels:
+        app: pycron
+    spec:
+      containers:
+        - name: pycron
+          image: registry.ap-southeast-1.aliyuncs.com/pdfgpt/pycron:v0.0.1
+          env:
+            - name: FLASK_ENV
+              value: "production"
+          ports:
+            - containerPort: 8000
+      imagePullSecrets:
+        - name: aliyun-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pycron-svc
+spec:
+  selector:
+    app: pycron
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
