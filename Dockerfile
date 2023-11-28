@@ -1,9 +1,8 @@
 # 使用官方 Python 运行时作为父镜像
-FROM --platform=linux/amd64 registry.ap-southeast-1.aliyuncs.com/pdfgpt/pycron:v0.0.3
-
-# RUN apt-get update && apt-get install -y tzdata
-# ENV TZ=Asia/Shanghai
-# RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+FROM --platform=linux/amd64 registry.ap-southeast-1.aliyuncs.com/pdfgpt/pycron:v0.0.5
+#RUN apt-get update && apt-get install -y tzdata
+#ENV TZ=Asia/Shanghai
+#RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # 设置工作目录为 /app
 WORKDIR /app

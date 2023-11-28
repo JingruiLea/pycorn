@@ -2,3 +2,5 @@ Flask
 APScheduler
 gunicorn
 requests
+mongoengine
+python-dotenv
