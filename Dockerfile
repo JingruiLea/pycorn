@@ -1,5 +1,5 @@
 # 使用官方 Python 运行时作为父镜像
-FROM --platform=linux/amd64 registry.ap-southeast-1.aliyuncs.com/pdfgpt/pycron:v0.0.5
+FROM --platform=linux/amd64 registry.ap-southeast-1.aliyuncs.com/pdfgpt/pycron:我希望不会
 #RUN apt-get update && apt-get install -y tzdata
 #ENV TZ=Asia/Shanghai
 #RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
